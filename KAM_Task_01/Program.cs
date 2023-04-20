@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-            var price = 2;
-            var userGold = 0; 
+            int price = 2;
+            var userGold = 0;
             var userBuy = 0;
             try
             {
@@ -20,7 +20,7 @@
             {
                 Console.WriteLine("\nВведены некорректные данные! ");
                 Console.WriteLine($"Осталось золота: {userGold}");
-                Console.WriteLine($"Количество кристаллов: 0");
+                Console.WriteLine($"Количество кристаллов: {userBuy}");
             }
         }
     }

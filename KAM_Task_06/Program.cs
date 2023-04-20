@@ -13,7 +13,7 @@ namespace KAM_Task_06
                 displayInterface();
                 Console.Write("Напишите номер пункта: ");
                 var userInput = int.TryParse(Console.ReadLine(), out var result);
-                if (userInput) selectAction(result, ref masWorkers, ref masPosts);
+                if (userInput) SelectAction(result, ref masWorkers, ref masPosts);
                 Console.Write("\nНажмите любую клавишу для продолжения...");
                 Console.ReadKey();
             } while (true);
@@ -29,7 +29,7 @@ namespace KAM_Task_06
                 "4) поиск по фамилии \n" +
                 "5) выход\n");
         }
-        private static void addDossierAndPost(ref string[] masWorkers, ref string[] masPosts)
+        private static void AddDossierAndPost(ref string[] masWorkers, ref string[] masPosts)
         {
             string f_string = "Null";
             string i_string = "Null";
@@ -52,7 +52,7 @@ namespace KAM_Task_06
             masWorkers[masWorkers.Length - 1] = f_string + " " + i_string + " " + o_string;
             masPosts[masPosts.Length - 1] = post;
         }
-        private static void deleteDossierAndPost(ref string[] masWorkers, ref string[] masPosts)
+        private static void DeleteDossierAndPost(ref string[] masWorkers, ref string[] masPosts)
         {
             Console.Write("Введите id сотрудника, для удаления: ");
             try
@@ -67,7 +67,7 @@ namespace KAM_Task_06
                 Console.WriteLine($"Сотрудник с id {id} удален.");
             } catch { Console.WriteLine("Сотрудник не найден."); }
         }
-        private static void findBySurname(string[] masWorkers, string[] masPosts)
+        private static void FindBySurname(string[] masWorkers, string[] masPosts)
         {
             Console.Write("Введите фамилию сотрудника, для поиска: ");
             var userInput = Console.ReadLine().Replace(" ", "");
@@ -77,24 +77,24 @@ namespace KAM_Task_06
                 if (masWorkers[i].Contains(userInput)) Console.WriteLine($"{i + 1} - {masWorkers[i]} - {masPosts[i]}");
             }
         }
-        private static void showDossiers(string[] masWorkers, string[] masPosts)
+        private static void ShowDossiers(string[] masWorkers, string[] masPosts)
         {
            for (var i = 0; i < masWorkers.Length; i++)
             {
                 Console.WriteLine($"{i+1} - {masWorkers[i]} - {masPosts[i]}");
             }
         }
-        private static void selectAction(int input, ref string[] masWorkers, ref string[] masPosts)
+        private static void SelectAction(int input, ref string[] masWorkers, ref string[] masPosts)
         {
             switch (input)
             {
-                case 1: addDossierAndPost(ref masWorkers, ref masPosts);
+                case 1: AddDossierAndPost(ref masWorkers, ref masPosts);
                     break;
-                case 2: showDossiers(masWorkers, masPosts);
+                case 2: ShowDossiers(masWorkers, masPosts);
                     break;
-                case 3: deleteDossierAndPost(ref masWorkers, ref masPosts);
+                case 3: DeleteDossierAndPost(ref masWorkers, ref masPosts);
                     break;
-                case 4: findBySurname(masWorkers, masPosts);
+                case 4: FindBySurname(masWorkers, masPosts);
                     break;
                 case 5: Environment.Exit(1);
                     break;

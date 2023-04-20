@@ -21,7 +21,7 @@
                 "* Межпространственный разлом – позволяет скрыться в разломе (Восстанавливает 25 хп. + урон босса по вам не проходит).\n" +
                 "* Кефтен – наносит физический урон (Наносит 5 урона боссу).\n" +
                 "* Мерба – позволяет произвести комбо удар после Кефтен'а (Наносит 10 урона боссу, но наносит вам 5 урона).\n" +
-                $"\nКаждый ход босс наносит урон в размере {BossDamage} ХП.\n");
+                $"\nКаждый ход босс наносит урон в размере {BossDamage} HP.\n");
 
             FistMotion(random, ref UserHP, BossDamage);
             do
@@ -40,7 +40,7 @@
             if (random.Next(2) == 1)
             {
                 UserHP -= BossDamage;
-                Console.WriteLine($"\nПервый ход достался Боссу! Он уже снял вам {BossDamage}");
+                Console.WriteLine($"\nПервый ход достался Боссу! Он уже снял вам {BossDamage} HP.");
             }
         }
 
@@ -71,10 +71,12 @@
                     break;
                 case 1:
                     if (History.Last() == 0) BossHP -= 10;
+                    else Console.WriteLine("Навык не удалось использовать, вы пропустили ход.");
                     break;
                 case 2:
                     UserHP += 25;
                     if (UserHP > MaxUserHP) UserHP = MaxUserHP;
+                    else Console.WriteLine("Навык не удалось использовать, вы пропустили ход.");
                     History[History.Length - 1] = i;
                     return;
                 case 3:
@@ -82,6 +84,7 @@
                     break;
                 case 4:
                     if (History.Last() == 3) BossHP -= 10;
+                    else Console.WriteLine("Навык не удалось использовать, вы пропустили ход.");
                     UserHP -= 5;
                     break;
                 default: return;

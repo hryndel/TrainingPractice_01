@@ -4,7 +4,7 @@
     {
         private static void Main()
         {
-            var userInput = "";
+            string? userInput;
             do
             {
                 Console.Write("Введите слово EXIT: ");
