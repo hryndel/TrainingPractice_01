@@ -20,6 +20,8 @@
             Console.Write("Двигаться на WASD.");
             Console.SetCursorPosition(x - 12, 3);
             Console.Write("Чтобы закончить игру нажмите два раза Enter.\n");
+            Console.SetCursorPosition(x - 7, 4);
+            Console.Write("Нажатие клавиши TAB отобразит путь.\n");
             ReadMap();
             Draw(x, y, false);
             Movement(x, y);
