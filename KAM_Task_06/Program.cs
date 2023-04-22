@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace KAM_Task_06
+﻿namespace KAM_Task_06
 {
     internal class Program
     {

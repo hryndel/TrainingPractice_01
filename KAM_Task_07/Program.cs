@@ -1,7 +1,4 @@
-﻿using System;
-using System.Runtime.ExceptionServices;
-
-namespace KAM_Task_07
+﻿namespace KAM_Task_07
 {
     internal class Program
     {
